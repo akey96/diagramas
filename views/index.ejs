@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Generador de clases 2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<style>
+    #canvas{
+        border: 1px solid black;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1 class="title has-text-centered">Diagramador Web</h1>
+        <div id="jsonDiv">
+            
+        </div>
+
+		<div class="columns">
+			<div class="column">
+
+				<div>
+					<label class="label">Clase</label>
+					<div class="field is-grouped">
+						<div class="control has-icons-left">
+						  <input class="input" name="name" type="text" placeholder="" autocomplete="off" id="txtTitulo">
+						</div>
+					</div>
+				</div>
+
+				<form action="" id="frmAtributos">
+					<label class="label">Atributo</label>
+					<div class="field is-grouped">
+						<div class="control has-icons-left">
+						  <input class="input" name="name" type="text" placeholder="" autocomplete="off">
+						</div>
+		
+						  <div class="control">
+							<button id="btnAdd" type="button" class="button is-danger">
+								<span class="icon">
+									<i class="fas fa-plus"></i>
+								</span>
+							  </button>
+						  </div>
+					</div>
+				</form>
+
+
+				<form action="" id="frmMetodos">
+					<label class="label">Metodo</label>
+					<div class="field is-grouped">
+						<div class="control has-icons-left">
+						  <input class="input" name="name" type="text" placeholder="" autocomplete="off">
+		
+						</div>
+		
+						  <div class="control">
+							<button id="btnAddMetodo" type="button" class="button is-danger">
+								<span class="icon">
+									<i class="fas fa-plus"></i>
+								</span>
+							  </button>
+						  </div>
+					</div>
+				</form>
+
+
+			</div>
+
+
+			<div class="column">
+
+				<div id="divElements">
+		
+				</div>
+
+			</div>
+		</div>
+
+
+
+		<section class="section" id="app">
+			<div class="container">
+				<div class="columns">
+
+					<div class="column">
+						
+						<div>
+							<button id="clase" onclick="crearClase();" class="button is-rounded is-success">Crear Clase</button>
+							<br>
+							<br>
+							<button id="usa" onclick="dibujar();" class="button is-rounded is-primary">Crear Relacion</button>
+							<br>
+							<br>
+
+							<div class="w3-container">
+								<button onclick="document.getElementById('id01').style.display='block'" class="button is-rounded is-primary">Guardar Diagrama</button>
+							  
+								<div id="id01" class="w3-modal">
+								  <div class="w3-modal-content">
+									<div class="w3-container">
+									  <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+									  <p>Ingrese el nombre del Diagrama</p>
+									  <input type="text" id="nombreDiagrama">
+									  <button onclick="guardarDiagrama();" class="button is-rounded is-primary">Guardar</button>
+									</div>
+								  </div>
+								</div>
+							</div>
+							
+						</div>
+
+
+						<div class="">
+							<h2>Diagramas</h2>
+						  
+							<ul id="myList"></ul>
+						  </div>
+						  
+
+
+					</div>
+
+					<div class="column">
+						<canvas id="canvas" width="1000" height="800"></canvas>
+					</div>
+					
+				</div>
+	
+			</div>
+		</section>
+	
+
+      
+
+	
+    </div>
+    <script src="inicio.js"></script>
+</body>
+
+<!--
+<body>
+	<section class="section" id="app">
+		<div class="container">
+			<div class="columns">
+				<div class="column">
+					<canvas id="canvas" width="800" height="600"></canvas>
+				</div>
+				<div class="column">
+					<div>
+						<label class="label">Clase</label>
+						<div class="control">
+							<input id="txtTitulo" class="input" type="text"
+									placeholder="Ejem. Mascota">
+						</div>
+					</div>
+					<div>
+						<label class="label">Propiedades</label>
+						<div class="control">
+							<textarea id="txtPropiedades" rows="2" class="textarea"
+								placeholder="Una por cada línea"></textarea>
+						</div>
+					</div>
+					<div>
+						<label class="label">Métodos</label>
+						<div class="control">
+							<textarea  id="txtMetodos" rows="2" class="textarea"
+								placeholder="Uno por cada línea"></textarea>
+						</div>
+					</div>
+					<br>
+					<div>
+						<button id="clase" onclick="crearClase();" class="button is-rounded is-success">Crear Clase</button>
+						<br>
+						<br>
+						<button id="usa" onclick="crearLinea();" class="button is-rounded is-primary">Crear Linea</button>
+						<br>
+						
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+	</section>
+	
+	<script src="inicio.js"></script>
+</body>
+-->
+
+</html>
